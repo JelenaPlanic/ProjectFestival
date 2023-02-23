@@ -1,0 +1,168 @@
+<html>
+    <head>
+        <title>Festival Client</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="skripta.js"></script>
+    </head>
+
+    <body onload="loadPage()">
+        <div class="container">
+            <div class="row justify-content-center align-items-center mt-2">
+                <div id="loginFormDiv" style="display:block" class="col-10 col-md-8 col-lg-6">
+                    <h3 class="text-center">Prijava</h3>
+                    <form method="post" id="loginForm" onsubmit="return loginUser()">
+                        <div class="row">
+                            <div class="col-3"><label for="usernameLogin" class="form-label">Korisnicko ime:</label></div>
+                            <div class="col"><input type="text" id="usernameLogin" class="form-control"></div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-3"><label class="form-label" for="passwordLogin">Lozinka:</label></div>
+                            <div class="col"><input type="password" id="passwordLogin" class="form-control"></div>
+                        </div>
+                        <br/> 
+                        <div class="row justify-content-center">
+                            <div class="col-sm-4"><button type="submit" class="btn btn-outline-dark form-control">Prijava</button></div>
+                            <div class="col-sm-4"><button type="button" onclick="showRegister()" class="btn btn-dark form-control">Registracija</button></div>
+                        </div>          
+                    </form>
+                </div>
+            </div>
+
+            <div id="logout"  style="display: none;"  >
+                <div class="d-flex flex-row justify-content-between ">
+                <p id="info"></p>
+                <button type="button" class="btn btn-outline-dark" onclick="logout()">Odjava</button> 
+                </div>                                                                        
+             </div>
+
+            <div class="row justify-content-center align-items-center mt-2">
+                <div id="registerFormDiv" class="col-10 col-md-8 col-lg-6" style="display: none ;">
+                    <h3 class="text-center">Registracija</h3>
+                    <form method="post" id="registerForm" onsubmit ="return registerUser()" >
+                        <div class="row">
+                            <div class="col-3">
+                            <label class="form-label">Korisnicko ime:</label></div>
+                            <div class="col"><input type="text" id="usernameRegister" class="form-control"></div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-3"><label class="form-label">Email:</label></div>
+                            <div class="col"><input type="email" id="emailRegister" class="form-control"></div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-3"><label class="form-label">Lozinka:</label></div>
+                            <div class="col"><input type="password" id="passwordRegister" class="form-control"></div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-3"><label class="form-label">Ponovi lozinku:</label></div>
+                            <div class="col"><input type="password" id="confirmPasswordRegister" class="form-control"></div>
+                        </div>
+                        <br>
+                        
+                        <div class="row justify-content-center">
+                            <div class="col-sm-3">
+                                <button type="submit" class="btn btn-outline-dark form-control">Registruj se</button>
+                            </div>                          
+                        </div>
+                    </form>
+                </div>
+             </div>
+
+
+            <div id="data" class="row justify-content-center mt-1">                  
+            </div>
+
+            <div class="row justify-content-center align-items-center mt-2">
+                <div id="searchDiv" style="display: none ;"  class="col-12 col-md-10 col-lg-8"> 
+                    <h3 class="text-center">Pretraga festivala</h3>
+                    <br>
+                        <form  class="form-inline" onsubmit="return submitSearchFestivalForm()" method="post" id="searchFestivalForm">
+                            <div class="row">
+                                <div class="col-1 " >
+                                    <label for="start" class="form-label">Start:</label>                              
+                                </div>
+                                <div class="col-3 ">
+                                 <input type="number"  class="form-control" id="start">
+                                </div>
+                                <div class="col-1">
+                                    <label for="end">Kraj:</label>
+                                </div>
+                                <div class="col-3 ">
+                                    <input type="number"  class="form-control" id="end">
+                                </div>
+                                <div class="col-3 "><input type="submit" value="Pretraga" class="btn btn-outline-dark form-control"> </div>  
+                            </div>                          
+                        </form>            
+                 </div>
+             </div>
+
+            <div class="row justify-content-center align-items-center mt-2">           
+                <div id="formDiv" class="col-10 col-md-8 col-lg-6"  style="display: none ;">      
+                    <p class="h3 text-center">Dodavanje novog festivala</p>
+                    <br>
+                   <form method="post" onsubmit="return submitFestivalForm()" id="FestivalForm" >
+                   
+                      <div class="row">
+                        <div class="col-3"> <label class="form-label">Naziv:</label></div> 
+                        <div class="col"><input class="form-control" id="festivalNaziv" type="text"></div>                     
+                        </div>
+                       <br>
+    
+                       <div class="row">
+                        <div class="col"><label class="form-label">Cena karte:</label></div>
+                        <div class="col"><input class="form-control" id="festivalCenaKarte" type="number" min="1"></div>
+                       </div>
+                       <br>
+    
+                       <div class="row">
+                        <div class="col"><label class="form-label">Prvo odrzavanje:</label></div>
+                        <div class="col"><input type="number" min = "1951" max="2017" class="form-control" id="festivalGodina"></div>
+                       </div>
+                       <br>
+    
+                       <div class="row ">
+                        <div class="col-3"><label class="form-label">Mesto:</label></div>
+                        <div class="col"><select class="form-select" id="festivalPlace"></select></div>
+                       </div>
+                       <br>
+    
+                       <div class="row justify-content-center">
+                        <div class="col-5"><input type="submit" class="btn btn-success" value="Dodavanje"/></div>
+                        <div class="col-5"><input value="Odustajanje" type="reset" onclick="cancelFestivalForm()" class="btn btn-warning" > </div>
+                       </div>                    
+                   </form>
+               </div>
+             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </body>
+</html>

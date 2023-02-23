@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FestivalServis", "FestivalServis\FestivalServis.csproj", "{5CD56CD1-FB40-4A51-BEA4-CA98C346B30D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestivalServiceTest", "FestivalServiceTest\FestivalServiceTest.csproj", "{C9862355-0B1C-4BAD-88A8-4E629A3B1D6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CD56CD1-FB40-4A51-BEA4-CA98C346B30D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CD56CD1-FB40-4A51-BEA4-CA98C346B30D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CD56CD1-FB40-4A51-BEA4-CA98C346B30D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CD56CD1-FB40-4A51-BEA4-CA98C346B30D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9862355-0B1C-4BAD-88A8-4E629A3B1D6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9862355-0B1C-4BAD-88A8-4E629A3B1D6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9862355-0B1C-4BAD-88A8-4E629A3B1D6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9862355-0B1C-4BAD-88A8-4E629A3B1D6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38117E68-4ABD-4C0F-881E-5F0687125C7F}
+	EndGlobalSection
+EndGlobal
